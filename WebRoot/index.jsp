@@ -21,18 +21,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <style type="text/css">
+    	.blue{border-top: 1px solid #2FAEF0;}
+    </style>
+    
   </head>
   <body>
-    <h1>你好，世界！</h1>
-    
-     <form class="form-signin" role="form" action='${pageContext.request.contextPath}/filter.do' method="post">
-        <h2 class="form-signin-heading">登录</h2>
-        <input type="text" class="form-control" name="url" placeholder="url地址">
-        <p></p>       
-        <button class="btn btn-lg btn-primary btn-block" type="submit">过滤</button>
+   <div class="container-fluid">
+   <h3>过滤url</h3>
+   <hr class="blue">
+   	<div class="row">
+     <form class="form-signin" action='${pageContext.request.contextPath}/filter.do' method="post">
+			<div class="form-group col-sm-11">
+				<div class="input-group">
+					<div class="input-group-addon">url地址(包含http://)</div>
+					<input type="text" class="form-control" name="url" placeholder="url地址">
+				</div>
+			</div> 
+			<div class="col-sm-1"><button type="submit" class="btn btn-default">过滤</button></div>        
       </form>
+      </div>
+      <h3>信息</h3>
+   <hr class="blue">
       ${urls}
-
+</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="${pageContext.request.contextPath}/source/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
